@@ -1,0 +1,16 @@
+{
+    "name": "My extension",
+    "manifest_version": 3,
+    "version":"1",
+    "permissions": [
+      "<all_urls>",
+      "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+      },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  
