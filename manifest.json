@@ -1,9 +1,8 @@
 {
-    "name": "My extension",
+    "name": "news extension",
     "manifest_version": 3,
     "version":"1",
     "permissions": [
-      "<all_urls>",
       "activeTab"
     ],
     "action": {
