@@ -1,25 +1,37 @@
 <html>
- <head>
-   <title></title>
- </head>
- <body style="background-color: black;color: white;">
-     <div>
-        <h1>
-          <span id="site">site name</span> : <span id="author">author name</span>
-        </h1>
-     </div>
-     <div id="prejusdice">
-        prejusdice
-     </div>
-     <div id="pplsummary">
-      ppl summary
-     </div>
-     <button>
-      add comment
-     </button>
-     <button>
-      report site as fraudulent
-     </button>
-    <script src="popup.js"></script>
- </body>
+<head>
+  <title>Chrome Extension Popup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <div id="author">Author name</div>
+      <div id="site">Site name</div>
+    </h1>
+    <div id="prejudice-summary">
+      <h2>Detected Prejudice</h2>
+      <div id="prejudice-level">
+        <span class="level-indicator mild">Mild</span>
+      </div>
+      <div id="prejudice-details">
+         no details
+      </div>
+    </div>
+    <div id="people-summary">
+      <h2>People's Insights</h2>
+      <div id="pplsummary">
+         no summary
+      </div>
+    </div>
+    <div id="actions">
+      <button>Add Comment</button>
+      <button>Report Site as Fraudulent</button>
+      <button>Learn More About Bias</button>
+      <button>Fact-Check with Credible Sources?</button>
+      <button>View Diverse Perspectives</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
 </html>
