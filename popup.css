@@ -1,0 +1,64 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1, h2 {
+    margin-bottom: 15px;
+  }
+  
+  #author {
+    font-weight: bold;
+  }
+  
+  #site {
+    color: #969696;
+    font-size: 0.9em;
+  }
+  
+  .level-indicator {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .level-indicator.mild {
+    background-color: #fcfc37;
+  }
+  
+  .level-indicator.moderate {
+    background-color: #e48f0f;
+  }
+  
+  .level-indicator.strong {
+    background-color: #ff0000;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0062cc;
+  }
+  
+  #actions{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #prejudice-details{
+    margin-top: 20px;
+  }
