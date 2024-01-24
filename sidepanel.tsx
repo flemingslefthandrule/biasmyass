@@ -1,18 +1,24 @@
-<html>
-<head>
-  <title>Chrome Extension Popup</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <div class="container">
+import { useState } from "react"
+import "./popup.css"
+
+function IndexPopup() {
+  const [sitename, setSitename] = useState("site name")
+  const [author, setAuthor] = useState("no author was identified")
+
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    setSitename(tabs[0].url || "site has no name")
+  })
+
+  return (
+    <div className="container">
     <h1>
-      <div id="author">Author name</div>
-      <div id="site">Site name</div>
+      <div id="author">{author}</div>
+      <div id="site">{sitename}</div>
     </h1>
     <div id="prejudice-summary">
       <h2>Detected Prejudice</h2>
       <div id="prejudice-level">
-        <span class="level-indicator mild">Mild</span>
+        <span className="level-indicator mild">Mild</span>
       </div>
       <div id="prejudice-details">
          no details
@@ -32,6 +38,7 @@
       <button>View Diverse Perspectives</button>
     </div>
   </div>
-  <script src="popup.js"></script>
-</body>
-</html>
+  )
+}
+
+export default IndexPopup
