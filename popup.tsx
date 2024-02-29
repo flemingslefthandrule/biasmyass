@@ -5,9 +5,18 @@ function IndexPopup() {
   const [sitename, setSitename] = useState("site name")
   const [author, setAuthor] = useState("no author was identified")
 
-  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-    setSitename(tabs[0].url || "site has no name")
-  })
+    let queryOptions = { active: true, currentWindow: true }
+    let tabs = await chrome.tabs.query(queryOptions)
+
+    chrome.tabs.sendMessage(
+        tabs[0].id,
+        { msg: "send author name"},
+        function (response) {
+            console.log(response.authorName)
+            setAuthor(response.authorName)
+        }
+    );
+
   
   return (
     <div className="container">
