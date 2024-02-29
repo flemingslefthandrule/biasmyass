@@ -4,7 +4,15 @@ export const config: PlasmoCSConfig = {
   matches: ["<all_urls>"],
   all_frames: true
 }
+const authorLink = document.querySelector('a[data-testid="authorName"]')
+const authorName = authorLink.innerHTML
+console.log(authorName)
 
-console.log("hi")
-
-chrome.runtime.sendMessage({ url: window.location.href })
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.msg === "send author name") {
+            sendResponse({ authorName : authorName })
+        }
+    }
+);
+  
