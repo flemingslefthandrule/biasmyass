@@ -1,0 +1,6 @@
+[submodule "extension"]
+	path = extension
+	url = https://github.com/flemingslefthandrule/biasmyass-extension
+[submodule "backend"]
+	path = backend
+	url = https://github.com/flemingslefthandrule/backendbiasmyass
